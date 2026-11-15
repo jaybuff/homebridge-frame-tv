@@ -1,0 +1,43 @@
+{
+  "name": "homebridge-frame-tv",
+  "displayName": "Frame TV",
+  "version": "0.1.0",
+  "description": "One HomeKit TV tile for a Samsung The Frame: true power on/off, with Art Mode and your HDMI sources as inputs. Local only.",
+  "private": true,
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "frame.py",
+    "requirements.txt",
+    "constraints.txt",
+    "config.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "homebridge-plugin",
+    "samsung",
+    "the-frame",
+    "frame-tv",
+    "art-mode",
+    "homekit",
+    "television"
+  ],
+  "author": "Jay Buffington <me@jaybuff.com>",
+  "license": "Unlicense",
+  "engines": {
+    "node": "^20.18.0 || ^22.10.0 || ^24.0.0 || ^26.0.0",
+    "homebridge": "^1.8.0 || ^2.0.0"
+  },
+  "scripts": {
+    "check": "node --check index.js && python3 -m py_compile frame.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaybuff/homebridge-frame-tv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jaybuff/homebridge-frame-tv/issues"
+  },
+  "homepage": "https://github.com/jaybuff/homebridge-frame-tv#readme"
+}

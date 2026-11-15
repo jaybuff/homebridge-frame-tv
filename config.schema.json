@@ -1,0 +1,65 @@
+{
+  "pluginAlias": "FrameTV",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "One TV tile for a Samsung The Frame: tap for true power on/off, pick Art Mode or a source as the input. Pair with the Frame first (see the README). The tile is published as its own accessory: add it in the Home app with this bridge's setup code.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Tile name",
+        "type": "string",
+        "default": "Frame",
+        "required": true
+      },
+      "tvIp": {
+        "title": "Frame IP address",
+        "description": "Give the Frame a fixed IP (DHCP reservation).",
+        "type": "string",
+        "format": "ipv4",
+        "required": true
+      },
+      "tvMac": {
+        "title": "Frame MAC address",
+        "description": "Optional. Used for Wake-on-LAN; learned from the Frame automatically while it's on. Set it if the Frame is wired, or to wake it before it has been seen once.",
+        "type": "string"
+      },
+      "sources": {
+        "title": "Sources",
+        "description": "Inputs shown in the tile besides Art Mode. Defaults to HDMI 1.",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string",
+              "placeholder": "Apple TV",
+              "required": true
+            },
+            "key": {
+              "title": "Key",
+              "description": "Samsung remote key that selects it.",
+              "type": "string",
+              "default": "KEY_HDMI1",
+              "enum": ["KEY_HDMI1", "KEY_HDMI2", "KEY_HDMI3", "KEY_HDMI4", "KEY_TV"],
+              "required": true
+            }
+          }
+        }
+      },
+      "pythonPath": {
+        "title": "Python interpreter",
+        "description": "Python 3.10 or newer, used to build the plugin's own environment.",
+        "type": "string",
+        "default": "python3"
+      },
+      "pollInterval": {
+        "title": "Poll interval (seconds)",
+        "type": "integer",
+        "default": 10,
+        "minimum": 5
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+# Direct dependencies of frame.py. Full lock (transitive pins) is constraints.txt.
+samsungtvws==3.0.7
